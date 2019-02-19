@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" style=""
+	class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<meta charset="utf-8" />
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<aside th:replace="layout/layout :: aside"></aside>
+
+	<div
+		class="content-page-container full-reset custom-scroll-containers mCustomScrollbar _mCS_2 mCS-autoHide">
+		<div id="mCSB_2"
+			class="mCustomScrollBox mCS-dark-thin mCSB_vertical mCSB_inside"
+			tabindex="0" style="max-height: none;">
+			<div id="mCSB_2_container" class="mCSB_container"
+				style="position: relative; top: 0px; left: 0px;" dir="ltr">
+
+				<header th:replace="layout/layout :: header"></header>
+				<br> <br>				
+				<div class="container-fluid table-responsive" style="margin: 0 70px 0;">
+					<div class="conteiner-fluid">
+						<ul class="nav nav-tabs nav-justified" style="font-size: 17px;">
+							<li role="presentation" class="active"><a
+								th:href="@{/listarCar}">Carreras</a></li>
+							<li role="presentation"><a th:href="@{/listarMod}">Módulos
+									Educativos</a></li>
+							<li role="presentation"><a
+								th:href="@{/listarUnidadDidactica}">Unidades Didácticas</a></li>
+						</ul>
+					</div>
+					<br>
+					<div class="table-responsive">
+						<div class="table" style="margin: 0 !important;">
+							<div class="div-table-row div-table-row-list"
+								style="background-color: #FFFFFF; font-weight: bold;">
+								<div class="div-table-cell" style="width: 20%;">
+									<ol class="breadcrumb">
+										<li class="active"><i class="glyphicon glyphicon-plus-sign"></i> Nuevo</li>
+										<li><a th:href="@{/listarCar}"><i class="glyphicon glyphicon-th-list"></i> Listado</a></li>
+									</ol>
+								</div>
+								<div class="div-table-cell" style="width: 80%;"></div>
+							</div>
+						</div>
+					</div>					
+					<div class="contenedor-formulario">
+						<div class="wrap">
+							<form th:action="@{/formCar}" th:object="${carrera}" class="formulario" name="formulario_registro" method="post">							
+								<div>
+									<div class="input-group">
+										<input type="text" id="nombre" name="nombre" class=" error" th:field="*{nombre}">
+										<label class="label" for="nombre">Nombre:</label>
+									</div>
+									<div class="input-group">
+										<input type="text" id="descripcion" name="descripcion" class="  error" th:field="*{descripcion}">
+										<label class="label" for="descripcion">Descripciòn:</label>
+									</div>		
+									<input type="hidden" th:field="*{id}" />
+									<p class="text-center">
+										<button type="reset" class="btn btn-info"
+											style="margin-right: 20px;">
+											<i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar
+										</button>
+										<button type="submit" class="btn btn-success" id="guardar">
+											<i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar
+										</button>
+									</p>									
+								</div>
+							</form>
+						</div>
+					</div>					
+				</div>
+				<article th:replace="layout/layout :: article"></article>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

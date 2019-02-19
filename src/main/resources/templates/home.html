@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+	<aside th:replace="layout/layout :: aside"></aside>
+
+	<!-- Content page-->
+	<section
+		class="full-box dashboard-contentPage mCustomScrollbar _mCS_2 mCS-autoHide">
+		<div id="mCSB_2"
+			class="mCustomScrollBox mCS-dark-thin mCSB_vertical mCSB_inside"
+			tabindex="0" style="max-height: none;">
+			<div id="mCSB_2_container" class="mCSB_container"
+				style="position: relative; top: 0; left: 0;" dir="ltr">
+
+				<!-- NavBar -->
+				<header th:replace="layout/layout :: header"> </header>
+				<!-- Content page -->
+				<div class="container-fluid">
+					<div class="page-header">
+						<h1 class="text-titles" th:text="${Titulo}"></h1>
+					</div>
+				</div>
+				<div class="full-box text-center" style="padding: 30px 10px;">
+
+					<div class="full-box text-center" style="padding: 30px 10px;">
+						<article class="full-box tile">
+							<div
+								class="full-box tile-title text-center text-titles text-uppercase">
+								Admin</div>
+							<div class="full-box tile-icon text-center">
+								<i class="zmdi zmdi-account"></i>
+							</div>
+							<div class="full-box tile-number text-titles">
+								<p class="full-box">7</p>
+								<small>Register</small>
+							</div>
+						</article>
+						<article class="full-box tile">
+							<div
+								class="full-box tile-title text-center text-titles text-uppercase">
+								Teacher</div>
+							<div class="full-box tile-icon text-center">
+								<i class="zmdi zmdi-male-alt"></i>
+							</div>
+							<div class="full-box tile-number text-titles">
+								<p class="full-box">10</p>
+								<small>Register</small>
+							</div>
+						</article>
+						<article class="full-box tile">
+							<div
+								class="full-box tile-title text-center text-titles text-uppercase">
+								Student</div>
+							<div class="full-box tile-icon text-center">
+								<i class="zmdi zmdi-face"></i>
+							</div>
+							<div class="full-box tile-number text-titles">
+								<p class="full-box">70</p>
+								<small>Register</small>
+							</div>
+						</article>
+						<article class="full-box tile">
+							<div
+								class="full-box tile-title text-center text-titles text-uppercase">
+								Representative</div>
+							<div class="full-box tile-icon text-center">
+								<i class="zmdi zmdi-male-female"></i>
+							</div>
+							<div class="full-box tile-number text-titles">
+								<p class="full-box">70</p>
+								<small>Register</small>
+							</div>
+						</article>
+					</div>
+
+				</div>
+			</div>
+			<div id="mCSB_2_scrollbar_vertical"
+				class="mCSB_scrollTools mCSB_2_scrollbar mCS-dark-thin mCSB_scrollTools_vertical"
+				style="display: block;">
+				<a href="#" class="mCSB_buttonUp" style="display: block;"></a>
+				<div class="mCSB_draggerContainer">
+					<div id="mCSB_2_dragger_vertical" class="mCSB_dragger"
+						style="position: absolute; min-height: 30px; display: block; height: 330px; max-height: 704.4px; top: 0px;">
+						<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+					</div>
+					<div class="mCSB_draggerRail"></div>
+				</div>
+				<a href="#" class="mCSB_buttonDown" style="display: block;"></a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+

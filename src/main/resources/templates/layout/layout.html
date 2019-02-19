@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" style=""
+	class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head th:fragment="head">
+<title th:text="${Titulo}"></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Shortcut Icon" type="image/x-icon"
+	th:href="@{/assets/img/LogoIESTPCH.png}">
+<script th:src="@{/js/sweet-alert.min.js}"></script>
+<link rel="stylesheet" th:href="@{/css/sweet-alert.css}">
+<link rel="stylesheet"
+	th:href="@{/css/material-design-iconic-font.min.css}">
+<link rel="stylesheet" th:href="@{/css/normalize.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/jquery.dataTables.css}">
+<link rel="stylesheet" th:href="@{/css/estilos.css}">
+<link rel="stylesheet" th:href="@{/css/estilos.css.map}">
+<link rel="stylesheet" th:href="@{/css/estilos.sass}">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+	window.jQuery
+			|| document
+					.write('<script th:src="@{/js/jquery-1.11.2.min.js}"><\/script>')
+</script>
+<script th:src="@{/js/jquery-1.11.2.min.js}"></script>
+<script th:src="@{/js/modernizr.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/jquery.dataTables.js}"></script>
+<script th:src="@{/js/formulario.js}"></script>
+</head>
+<body>
+	<aside th:fragment="aside">
+		<div class="navbar-lateral full-reset">
+			<div class="visible-xs font-movile-menu mobile-menu-button"></div>
+			<div
+				class="full-reset container-menu-movile custom-scroll-containers mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar">
+				<div id="mCSB_1"
+					class="mCustomScrollBox mCS-dark-thin mCSB_vertical mCSB_inside"
+					tabindex="0" style="max-height: none;">
+					<div id="mCSB_1_container"
+						class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+						style="position: relative; top: 0; left: 0;" dir="ltr">
+						<div class="logo full-reset all-tittles" style="background-color: #2D3DA8; font-weight: bold;">
+							<i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button"
+								style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i>
+							IESTP CHURCAMPA
+						</div>
+						<div class="full-reset" style="background-color: #2B3D51; padding: 10px 0; color: #fff;">
+							<figure>
+								<img th:src="@{/assets/img/LogoIESTPCH.png}" alt="Instituto"
+									class="img-responsive center-box mCS_img_loaded"
+									style="width: 55%;">
+							</figure>
+							<p class="text-center" style="padding-top: 15px;">Sistema
+								Administracion Academica</p>
+						</div>
+						<div class="full-reset nav-lateral-list-menu">
+							<ul class="list-unstyled">
+								<li><a th:href="@{/home}"><i
+										class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+								<li>
+									<div class="dropdown-menu-button">
+										<i class="zmdi zmdi-case zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Administración <i
+											class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
+									</div>
+									<ul class="list-unstyled">
+										<li><a href="institution.html"><i
+												class="zmdi zmdi-balance zmdi-hc-fw"></i>&nbsp;&nbsp; Datos
+												institución</a></li>
+										<li><a th:href="@{/listarCar}"><i
+												class="glyphicon glyphicon-education zmdi-hc-fw"></i>&nbsp;&nbsp; Carreras
+												Profesionales</a></li>
+										<li><a href="category.html"><i
+												class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Nueva categoría</a></li>
+										<li><a href="section.html"><i
+												class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Nueva sección</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="dropdown-menu-button">
+										<i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Registro de usuarios <i
+											class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
+									</div>
+									<ul class="list-unstyled">
+										<li><a href="admin.html"><i
+												class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo
+												administrador</a></li>
+										<li><a href="teacher.html"><i
+												class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo
+												docente</a></li>
+										<li><a th:href="@{/formEst}"><i
+												class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo
+												estudiante</a></li>
+										<li><a href="personal.html"><i
+												class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Nuevo personal administrativo</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="dropdown-menu-button">
+										<i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Itinerario Formativo <i
+											class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
+									</div>
+									<ul class="list-unstyled">
+										<li><a th:href="@{/listarCar}"><i
+												class="glyphicon glyphicon-education zmdi-hc-fw"></i>&nbsp;&nbsp; Carreras Profesionales</a></li>
+										<li><a th:href="@{/listarMod}"><i
+												class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Módulos Educativos</a></li>
+										<li><a th:href="@{/listarUnidadDidactica}"><i
+												class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Unidades Didácticas</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="dropdown-menu-button">
+										<i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Préstamos y reservaciones <i
+											class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
+									</div>
+									<ul class="list-unstyled">
+										<li><a href="loan.html"><i
+												class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Todos
+												los préstamos</a></li>
+										<li><a href="loanpending.html"><i
+												class="zmdi zmdi-time-restore zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Devoluciones pendientes <span
+												class="label label-danger pull-right label-mhover">7</span></a>
+										</li>
+										<li><a href="loanreservation.html"><i
+												class="zmdi zmdi-timer zmdi-hc-fw"></i>&nbsp;&nbsp;
+												Reservaciones <span
+												class="label label-danger pull-right label-mhover">7</span></a>
+										</li>
+									</ul>
+								</li>
+								<li><a href="report.html"><i
+										class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Reportes y estadísticas</a></li>
+								<li><a href="advancesettings.html"><i
+										class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp;
+										Configuraciones avanzadas</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="mCSB_1_scrollbar_vertical"
+						class="mCSB_scrollTools mCSB_1_scrollbar mCS-dark-thin mCSB_scrollTools_vertical"
+						style="display: none;">
+						<a href="#" class="mCSB_buttonUp" oncontextmenu="return false;"></a>
+						<div class="mCSB_draggerContainer">
+							<div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+								style="position: absolute; min-height: 30px; height: 0px; top: 0px;"
+								oncontextmenu="return false;">
+								<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+							</div>
+							<div class="mCSB_draggerRail"></div>
+						</div>
+						<a href="#" class="mCSB_buttonDown" oncontextmenu="return false;"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+	<div class="content-page-container full-reset custom-scroll-containers mCustomScrollbar _mCS_2 mCS-autoHide">
+		<header th:fragment="header">
+			<nav class="navbar-user-top full-reset">			
+				<ul class="list-unstyled full-reset">					
+					<figure>
+						<img th:src="@{/assets/img/user01.png}" alt="user-picture"
+							class="img-responsive img-circle center-box mCS_img_loaded">
+					</figure>
+					<li style="color: #FFCC80; cursor: default;"><span
+						class="all-tittles">Admin Name</span></li>
+					<li class="tooltips-general exit-system-button"
+						th:data-href="@{/index.html}" data-placement="bottom" title=""
+						data-original-title="Salir del sistema"><i
+						class="zmdi zmdi-power"></i></li>
+					<li class="tooltips-general search-book-button"
+						th:data-href="@{/searchbook.html}" data-placement="bottom"
+						title="" data-original-title="Buscar"><i
+						class="zmdi zmdi-search"></i></li>
+					<li class="tooltips-general btn-help" data-placement="bottom"
+						title="" data-original-title="Ayuda"><i
+						class="zmdi zmdi-help-outline zmdi-hc-fw"></i></li>
+					<li class="mobile-menu-button visible-xs"
+						style="float: left !important;"><i class="zmdi zmdi-menu"></i>
+					</li>
+				</ul>
+			</nav>
+			<div class="alert alert-success" th:if="${success != null}"
+				th:text="${success}"></div>
+			<div class="alert alert-danger" th:if="${error != null}"
+				th:text="${error}"></div>
+			<div class="alert alert-warning" th:if="${warning != null}"
+				th:text="${warning}"></div>
+			<div class="alert alert-info" th:if="${info != null}"
+				th:text="${info}"></div>
+		</header>
+
+		<div id="mCSB_2"
+			class="mCustomScrollBox mCS-dark-thin mCSB_vertical mCSB_inside"
+			tabindex="0" style="max-height: none;">
+			<div id="mCSB_2_container" class="mCSB_container"
+				style="position: relative; top: 0; left: 0;" dir="ltr">
+
+
+				<section class="full-reset text-center" style="padding: 40px 0;">
+
+				</section>
+
+			</div>
+		</div>
+		
+		<article th:fragment="article">
+		<div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<h4 class="modal-title text-center all-tittles">ayuda del
+							sistema</h4>
+					</div>
+					<div class="modal-body">Lorem ipsum dolor sit amet,
+						consectetur adipisicing elit. Inventore dignissimos qui molestias
+						ipsum officiis unde aliquid consequatur, accusamus delectus
+						asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi
+						mollitia corporis iusto.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">
+							<i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</article>				
+			
+		<footer th:fragment="footer" class="footer full-reset">
+			<div class="container body-content">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<h4 class="all-tittles">Acerca de</h4>
+						<p>Copyright @ 2018 Derechos Reservados - IESTP de Churcampa
+							Telefono: 067-487157</p>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<h4 class="all-tittles">Desarrollado por</h4>
+						<ul class="list-unstyled">
+							<li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Ancelmo
+								Ulloa <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i
+								class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
